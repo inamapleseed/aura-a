@@ -1,0 +1,27 @@
+<div class="page-tpl">
+    {% section 'about-us' %}
+</div>
+
+<style>
+  @media (min-width: 720px) {
+    .flexible-layout--variable-columns > div {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+    .text-column__text > div {
+      margin: 0 auto;
+      width: 80%;
+    }
+    .text-column__text {
+      width: 50%;
+      padding: 1.875rem;
+    }
+    .text-column__image {
+      width: 50%;
+    }
+  }
+  .text-column__image img {
+      max-width: 100%;
+  }
+</style>

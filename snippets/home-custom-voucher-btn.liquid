@@ -1,0 +1,69 @@
+{% comment %} <a class="button hover-grow fixed-btn" href="/pages/vouchers" style="display: none"> {% endcomment %}
+<a class="button hover-grow fixed-btn" href="/pages/vouchers">
+	<img src="https://cdn.shopify.com/s/files/1/2319/7559/files/voucher-icon2.png?v=1657267451" class="img" /> Vouchers
+</a>
+{% comment %}
+{% if template contains 'index' %}
+    <a class="button hover-grow fixed-btn" href="/pages/vouchers">
+      <img src="https://cdn.shopify.com/s/files/1/2319/7559/files/voucher-icon2.png?v=1657267451" class="img" />
+    </a>
+{% endif %}
+{% endcomment %}
+<style>
+
+  @keyframes pulse {
+    0%{
+      box-shadow:0 0 0 0 rgba(0,0,0, 0.4);
+    }
+    70%{
+      box-shadow:0 0 0 15px rgba(0,0,0, 0);
+    }
+    100%{
+      box-shadow:0 0 0 0 rgba(0,0,0, 0);
+    }
+  }
+  .fixed-btn {
+    text-decoration: none !important;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    z-index: 999;
+    transition-delay: 0.4s;
+    background-image: linear-gradient(69deg, rgba(209,145,100,1) 32%, rgba(202,156,116,1) 50%, rgba(220,175,132,1) 63%);
+    border: none;
+    border-radius: 50px !important;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    height: 60px;
+/*     width: 60px; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .fixed-btn:hover {  	
+    animation: pulse 1s ease infinite !important;
+    background-image: linear-gradient(69deg, rgba(209,145,100,1) 32%, rgba(202,156,116,1) 50%, rgba(220,175,132,1) 63%);
+    color: #fff;
+    border: none;
+  }
+  .fixed-btn .img {
+  	width: 35px;
+    height: auto;
+    margin-right: 10px;
+  }
+  .fixed-btn {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    z-index: 999;
+    transition-delay: 0.4s;
+    background-image: linear-gradient(69deg, rgba(209,145,100,1) 32%, rgba(202,156,116,1) 50%, rgba(220,175,132,1) 63%);
+    border: none;
+    padding: 15px 30px;
+    height: 60px;
+    /* width: 60px; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+</style>

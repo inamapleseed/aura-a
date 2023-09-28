@@ -1,0 +1,117 @@
+<script type="application/pxs-animation-mapping+json">
+  {
+    "blocks": [".logolist--inner"],
+    "elements": [
+      ".logolist--item"
+    ]
+  }
+</script>
+
+<style>
+  {% if section.settings.background_color != blank %}
+    .logolist--container {
+      background: {{ section.settings.background_color }};
+    }
+  {% endif %}
+</style>
+
+<section class="logolist--container">
+  {% if section.settings.title != blank %}
+    <h2 class="home-section--title le-title">
+      {{ section.settings.title | escape }}
+    </h2>
+  {% endif %}
+
+  <div class="home-section--content logolist--inner">
+    {% for block in section.blocks %}
+      <div class="logolist--item" {{ block.shopify_attributes }}>
+        {% if block.settings.link != blank %}
+          <a
+            class="logolist--link"
+            href="{{ block.settings.link }}"
+            target="_blank"
+          >
+        {% endif %}
+
+        {% if block.settings.image %}
+          {%
+            render 'rimg',
+            img: block.settings.image,
+            class: 'logolist--image',
+            size: '160x160',
+            lazy: true,
+            canvas: true,
+          %}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'placeholder--image logolist--image' }}
+        {% endif %}
+
+        {% if block.settings.link != blank %}
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Logo list",
+  "class": "logolist--section",
+  "max_blocks": 18,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Logo list"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f8f8f8"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image",
+          "info": "320 x 320px .png recommended"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Logo list",
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

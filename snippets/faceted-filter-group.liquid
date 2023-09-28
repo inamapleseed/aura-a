@@ -1,0 +1,326 @@
+{% comment %}
+  @param filter
+  @param filter_group_classes
+{% endcomment %}
+
+<div
+  class="
+    collection-filters__filter-group
+    {{ filter_group_classes }}
+  "
+  aria-label="{{ 'product_grid.filters.title_count.zero' | t }}"
+  data-filter-group
+>
+  <button
+    class="
+      collection-filters__filter-group-heading
+      productgrid--sidebar-button
+    "
+    data-filter-group-trigger
+    aria-expanded="false"
+  >
+    <div class="collection-filters__filter-title">
+      {{ filter.label }}
+    </div>
+
+    <div class="collection-filters__filter-icon-wrapper" tabindex="-1">
+      <span class="collection-filters__filter-icon">
+        {% render 'icon-chevron-down-small' %}
+      </span>
+    </div>
+  </button>
+
+  {% case filter.type %}
+    {% when 'list' %}
+      <ul
+        class="
+          collection-filters__filter
+          collection-filters__filter-list
+        "
+        data-filter-group-list
+        aria-expanded="false"
+        data-accordion-content
+        >
+      {% if filter.label == 'Color' %}
+        <!-- start colors -->
+          <!-- main colors to show on filters -->
+          {% assign color_fam = "Beige, Black, Blue, Brown, Green, Grey, Khaki, Purple, Orange, Pink, Printed, Red, White, Yellow" | split: ', '%}
+  
+          {% assign url_color_filter = "filter.v.option.color=" %}
+
+          {%- for color in color_fam -%}
+              {% assign container = '' %}
+            
+              {% if color == 'Beige' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "DUNE, NUDE, SAND, NATURAL" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Black' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "BLACK, INK, TIDAL, BLACK/LACE, BLACK/BLACK, BLACK GLOSSY" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Blue' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "TEAL, SKY,  TEAL,  RAIN CLOUD,  LIGHT TEAL, NAVY, POWDER BLUE, BLUE,  OCEAN,  BLUE, BLUE GREEN,  LGHT BLUE, AQUA, SKY BLUE, SEA, WATERFALL, STEEL BLUE, BABY BLUE, MIDNIGHT BLUE, SLATE BLUE, MDNGHT, SLATE BL, CLASSIC BLUE, MDNGHT BLU," | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Brown' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "NUT,  CARAMEL, LATTE, CAMEL, BROWN, TAN, OAT,  ESPRESSO" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Green' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "ARMY, SAGE, GREEN, LIME, FOREST, SURPLUS, MINT GREEN, ISLAND GREEN, ISLAND GREEN COLORBLOCK , JADE GREEN, WAFFLE GREEN" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Grey' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "BLUEGREY, GREY,  HEATHER GRAY,  SEAMOON ROCK, CEMENT,  WARM GRAY, HEATHER GRAY,  GRADIENTGREY, CHARCOAL, HEATHER, STONE, SPRKLE TOELES SLVR" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Khaki' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "DEEP OLIVE, MILITARY OLIVE,  OLIVE, OLV, KHAKI" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Orange' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "POPPY,  CLAY, ORANGE, PAPAYA, APRICOT SPRKLE" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Pink' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = " BABY PINK, PINK, PASTEL PINK, BLUSH, ROSE, PRISM PINK, FLAMINGO PINK, LIME PINK, LIME/PINK, PINK LACE, RASPBERRY, SPARKLE BLUSH BALLET,  LH PWDERPNK ANDNUDESAND" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Printed' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "PALM BATCH STRIPE, OCEAN SUNSET, AMOUR LEOPARD, CHEETAHNUDE, PINK CHEETAH, STRIPE, ANIMAL, CHECK" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Purple' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "PURPLE,  ORCHID PETAL, PURPLE, ORCHID BLOOM, LAVANDER, LAVENDER, LILAC, PUR, LAV, CLASSIC PRPLE, SPARKLE VIOLET BALLET, OVER THE RAINBOW MARAIS, PEACE" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Red' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "Red" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'White' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "WHITE, OFF WHITE,  COCONUT, IVORY, BONE, WHITE LEMON COLORBLOCK, ISLAND BREEZE, MARSHMELLOW, YELLOW, NATURAL LACE" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% elsif color == 'Yellow' %}
+                <!-- option names to consolidate in one var to match color filters -->
+                {% assign brandColorName = "YELLOW, NATURAL LACE" | split: ", " %}
+        
+                {% for brandColor in brandColorName %}
+                  {% assign formatted_brandColor = brandColor | prepend: url_color_filter | append: '&' %}
+                  <!-- consolidate family colors to one var -->
+                  {% assign container = container | append: formatted_brandColor %}
+                {% endfor %}
+              {% endif %}
+
+              <li class="
+                collection-filters__filter-list-item" data-filter-open="false">
+                <a class="collection-filters__filter-link" data-name="filter.v.option.color" data-value="" data-handle="filter-Color-0" 
+                  data-url="{{ request.path }}?{{ container }}" href="{{ request.path }}?{{ container }}" 
+                  data-filter-input="">
+                  <span class="filter-icon--checkbox" data-handle="filter-Color-0">
+                    <svg class="checkmark" aria-hidden="true" focusable="false" role="presentation" width="14" height="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" data-animation-state="unchecked">
+                    <path class="checkmark__check" fill="none" d="M2.5 7L5.5 10L11.5 4" data-animation-state="unchecked"></path>
+                    </svg>
+                  </span>
+                  <span class="collection-filters__filter-list-item-text" style="display: flex;">
+                    {{ color }}
+                  </span>
+                </a>
+              </li>
+          {%- endfor -%}
+        {% endif %}
+        <!-- end colors -->
+    
+        {%- for value in filter.values -%}
+  
+          <li 
+            class="{% if value.param_name == 'filter.v.option.color' %} brand-colors-hide {% endif %}
+              collection-filters__filter-list-item
+              {% if value.active %}
+                collection-filters__filter-list-item--active
+              {% endif %}
+            "
+            {% if value.active -%}
+              data-filter-open="true"
+            {% else %}
+              data-filter-open="false"
+            {% endif %}
+          >
+            <a
+              class="collection-filters__filter-link"
+              data-name="{{ value.param_name }}"
+              data-value="{{ value.value }}"
+              data-handle="filter-{{ filter.label | escape | replace: ' ', '-'}}-{{ forloop.index0 }}"
+
+              {% if value.active -%}
+                {% assign animation_state = 'checked' %}
+                data-filter-active
+                data-url="{{ value.url_to_remove | replace: '%2C', ',' }}"
+                href="{{ value.url_to_remove | replace: '%2C', ',' }}"
+              {% else %}
+                  {% assign animation_state = 'unchecked' %}
+                data-url="{{ value.url_to_add | replace: '%2C', ',' }}"
+                href="{{ value.url_to_add | replace: '%2C', ',' }}"
+              {%- endif %}
+              {% if value.count == 0 and value.active == false -%}
+                data-disabled
+              {%- endif %}
+              data-filter-input
+            >
+              <span class="filter-icon--checkbox" data-handle="filter-{{ filter.label | escape | replace: ' ', '-'}}-{{ forloop.index0 }}">
+                {%- render 'icon-checkmark-animated', animation_state: animation_state -%}
+              </span>
+              <span class="collection-filters__filter-list-item-text" style="display: flex;">
+                {{ value.label | escape }}
+                {% if show_product_count %}
+                  ({{ value.count }})
+                {% endif %}
+              </span>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {% when 'price_range' %}
+      <form
+        class="collection-filters__price-range-form"
+        data-accordion-content
+      >
+        <div
+          class="
+            collection-filters__filter
+            collection-filters__filter-range
+          "
+          data-filter-group-range
+          aria-expanded="false"
+        >
+          <div class="collection-filters__filter-range--from">
+            <span class="collection-filters__filter-range-currency">{{ cart.currency.symbol }}</span>
+            <input
+              class="
+                collection-filters__filter-range-input
+                form-field-input
+              "
+              name="{{ filter.min_value.param_name }}"
+              data-test="{{ filter.active_values }}"
+
+              id="filter-{{ filter.label }}-{{ forloop.index0 }}-from"
+              {% if filter.min_value.value -%}
+                value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+              {%- endif %}
+              type="number"
+              placeholder="0"
+              min="0"
+              max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+              data-filter-range
+            >
+              <label
+                class="
+                  form-field-title
+                  collection-filters__filter-range-label
+                "
+                for="filter-{{ filter.label }}-{{ forloop.index0 }}-from"
+              >
+                  From
+              </label>
+          </div>
+          <div class="collection-filters__filter-range--to">
+            <span class="collection-filters__filter-range-currency">{{ cart.currency.symbol }}</span>
+            <input
+              class="
+                collection-filters__filter-range-input
+                form-field-input
+              "
+              name="{{ filter.max_value.param_name }}"
+              data-test="{{ filter.active_values }}"
+
+              id="filter-{{ filter.label }}-{{ forloop.index0 }}-to"
+              {% if filter.max_value.value -%}
+                value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+              {%- endif %}
+              type="number"
+              placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+              min="0"
+              max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+              data-filter-range
+            >
+              <label
+                class="
+                  form-field-title
+                  collection-filters__filter-range-label
+                "
+                for="filter-{{ filter.label }}-{{ forloop.index0 }}-to"
+              >
+                To
+              </label>
+          </div>
+        </div>
+      </form>
+  {% endcase %}
+</div>

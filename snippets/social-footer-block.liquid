@@ -1,0 +1,25 @@
+{% if block.type == 'social_accounts' %}
+  <div class="">
+  
+      {%
+        render 'social-list',
+        context: 'footer',
+      %}
+  </div>
+  <style>
+    .site-footer-block-title {
+      display: none;
+    }
+    .socials .social-icons .social-link {
+      margin-left: 20px;
+    }
+    .socials {
+      padding: 0;
+    }
+    .socials .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: end;
+    }
+  </style>
+{% endif %}
