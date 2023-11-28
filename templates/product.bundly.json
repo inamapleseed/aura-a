@@ -13,11 +13,6 @@
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
@@ -34,18 +29,13 @@
           "settings": {
           }
         },
-        "0583742e-a6e7-4c2a-a666-f157638f8ce5": {
-          "type": "shopify:\/\/apps\/bundly-mix-match-bundles\/blocks\/mixnmatch\/1cabc354-c7f9-42e9-8322-7655396b33b7",
+        "0f3f81b7-4888-4eec-a2bc-8522ad853cd7": {
+          "type": "shopify:\/\/apps\/bundly-mix-match-bundles\/blocks\/bundle_price\/1cabc354-c7f9-42e9-8322-7655396b33b7",
           "settings": {
           }
         },
-        "9cf33fda-5ef7-4a6d-b86f-12318442f84f": {
-          "type": "shopify:\/\/apps\/bundly-mix-match-bundles\/blocks\/bogo\/1cabc354-c7f9-42e9-8322-7655396b33b7",
-          "settings": {
-          }
-        },
-        "6d490ab1-10ca-4072-8850-bd2fd0a5064a": {
-          "type": "shopify:\/\/apps\/bundly-mix-match-bundles\/blocks\/pack\/1cabc354-c7f9-42e9-8322-7655396b33b7",
+        "7a329270-75da-41cf-9330-7269c094c4c3": {
+          "type": "shopify:\/\/apps\/bundly-mix-match-bundles\/blocks\/bundle_variant_picker\/1cabc354-c7f9-42e9-8322-7655396b33b7",
           "settings": {
           }
         }
@@ -53,13 +43,11 @@
       "block_order": [
         "title",
         "vendor",
-        "price",
+        "0f3f81b7-4888-4eec-a2bc-8522ad853cd7",
         "description",
         "form",
         "share",
-        "0583742e-a6e7-4c2a-a666-f157638f8ce5",
-        "9cf33fda-5ef7-4a6d-b86f-12318442f84f",
-        "6d490ab1-10ca-4072-8850-bd2fd0a5064a"
+        "7a329270-75da-41cf-9330-7269c094c4c3"
       ],
       "custom_css": [
         ".options-selection__option-values {display: flex; flex-wrap: wrap;}",
